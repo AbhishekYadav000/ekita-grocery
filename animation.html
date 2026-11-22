@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.slider {
+    width: 25%;
+    max-width: 960px;
+    overflow: hidden;
+
+    }
+    .slider figure img{
+        width:25% ;
+        float: left;
+    }
+    .slider figure {
+        width: 400%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        animation: 10s slide infinite;
+    }
+    @keyframes slide {
+        0%{ left: 0%;}
+        16%{ left: 0%;}
+        33%{ left: -100%;}
+        49%{ left: -100%;}
+        66%{ left: -200%;}
+        82%{ left: -200%;}
+        100%{ left: 0%;}
+        
+        
+    }
+</style>
+<body>
+    <div class="slider">
+        <figure>
+            <img src="image1.jpg" alt="Grocery Interior 1" class="img">
+            <img src="image2.jpg" alt="Grocery Interior 1" class="img">
+            <img src="image3.jpg" alt="Grocery Interior 1" class="img">
+            <img src="image4.jpg" alt="Grocery Interior 1" class="img">
+            
+            
+
+        </figure>
+    </div>
+    
+</body>
+</html>

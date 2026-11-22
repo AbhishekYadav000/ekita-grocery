@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="headerfooter.css">
+</head>
+
+<body>
+    <!--HeaderSection-->
+    <div class="container">
+        <header class="fixed-header">
+            <img src="Logo.png" alt="logo" height="150px" width="150px">
+            <h1> Ekita Grocery Store<small>(The Nepalese Cuisine)</small></h1>
+            <a href="login.html"> Sign In</a>
+            <a href="signup.html"> Sign Up</a>
+        </header>
+        <nav>
+            <a href="index.html"> Home</a>
+            <a href="grocery.html"> Grocery Items</a>
+            <a href="order.html"> Order</a>
+            <a href="feedback.html"> Feedback</a>
+            <a href="about.html"> About</a>
+        </nav>
+    </div>
+
+    <!--ContentSection-->
+
+    <!-- Order Form -->
+    <section id="order" class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2>Enter your Details</h2>
+                <form id="orderForm" onsubmit="return validateForm()" >
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" required>
+                    </div>
+                    <br><br>
+                    <div class="form-group">
+                        <label for="address">Delivery Address:</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter delivery address" required>
+                    </div>
+                    <br><br>
+                    <div class="form-group">
+                        <label for="menu">Menu:</label>
+                        <select class="form-control" id="menu" required>
+                            <option value="">Select a dish</option>
+                            <option value="Tomatoes">Tomatoes - 0.99£kg</option>
+                            <option value="Carrot">Carrot - 1.10£kg</option>
+                            <option value="Potatoes">Potatoes - 1.59£kg</option>
+                            <option value="Cucumber">Cucumber - 1.39£kg</option>
+                            <option value="Pumpkin">Pumpkin - 1.99£kg</option>
+                            <option value="Mutton">Mutton - 6.99£kg</option>
+                            <option value="Pork-neck">Pork-neck - 4.89£kg</option>
+                            <option value="Chicken sausage">Chicken sausage - 3.99£kg</option>
+                            <option value="Fish">Fish - 2.99£kg</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" min="1" required>
+                    </div>
+                    <br><br>
+                    <div class="form-group">
+                        <label for="payment">Payment Method:</label>
+                        <select class="form-control" id="payment" required>
+                            <option value="">Select a payment method</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Card">Card</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <button type="submit" href="order.html" onsubmit="validateForm()" class="btn btn-primary w-100">Place your order</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!--FooterSection-->
+    <div class="container">
+        <footer class="fixed-footer">
+            <p>2024 My website. All rights reserved</p>
+            <p> Contact: ekita143@uel.ac.uk</p>
+            <p> <a href="sitemap.html"> Site Map </a></p>
+        </footer>
+    </div>
+</body>
+<script>
+    function validateForm() {
+        var phone = document.getElementById("phone").value;
+        var address = document.getElementById("address").value;
+        var menu = document.getElementById("menu").value;
+        var quantity = document.getElementById("quantity").value;
+        var payment = document.getElementById("payment").value;
+
+        if (phone === "") {
+            alert("Please enter your phone number.");
+            return false;
+        }
+
+        if (address === "") {
+            alert("Please enter your delivery address.");
+            return false;
+        }
+
+        if (menu === "") {
+            alert("Please select a dish from the menu.");
+            return false;
+        }
+
+        if (quantity === "" || quantity <= 0) {
+            alert("Please enter a valid quantity.");
+            return false;
+        }
+
+        if (payment === "") {
+            alert("Please select a payment method.");
+            return false;
+        }
+        window.location.href = 'index.html';
+        const varl = window.location.href = 'index.html';
+        console.log(varl);
+        alert("Your order has been placed successfully!");
+        return true;
+    }
+</script>
+</html>
